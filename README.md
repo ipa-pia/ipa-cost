@@ -16,6 +16,7 @@ always use the latest version of Nuxt
 - [x] unplugin-icons
 - [x] vue3-context-menu
 - [x] husky & commitlint
+- [x] prisma
 
 ## TODO
 
