@@ -21,3 +21,8 @@ always use the latest version of Nuxt
 ## TODO
 
 - [ ] global error handler at server side
+
+## FAQ 
+
+1. Could not locate the bindings file: better-sqlite3
+> `pnpm rebuild better-sqlite3`
