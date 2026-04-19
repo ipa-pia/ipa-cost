@@ -30,7 +30,18 @@ export default defineNuxtConfig({
       baseUrl: process.env.BETTER_AUTH_URL || process.env.BASE_URL,
     },
   },
-  appConfig: {},
+  appConfig: {
+    // 服务端配置（不会暴露给客户端）
+    openai: {
+      // 将在此处配置真实 key，或在开发时设置 mock 为 true
+      apiKey: "",
+      mock: true,
+      baseUrl: "http://localhost:11434/v1",
+      model: "qwen2.5-coder:0.5b",
+    },
+    // 公开给客户端的运行时配置放在 public 下
+    public: {},
+  },
   build: {
     // FIXME: not work
     transpile: ["@ipa-schema/api"],

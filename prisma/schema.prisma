@@ -11,3 +11,14 @@ generator client {
 datasource db {
   provider = "sqlite"
 }
+
+model Entry {
+  id        String   @id @default(cuid())
+  title     String
+  amount    Float
+  currency  String   @default("CNY")
+  date      DateTime
+  category  String?
+  note      String?
+  createdAt DateTime @default(now())
+}

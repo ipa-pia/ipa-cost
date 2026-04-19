@@ -1,13 +1,14 @@
 <template>
-  <div class="flex flex-col items-center">
-      <UserProfile v-if="isSignedIn"/>
+  <div class="p-6 max-w-4/5 mx-auto">
+    <EntryPage v-if="isSignedIn" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { UserProfile } from "@clerk/nuxt/components";
+import EntryPage from "~/components/EntryPage.vue";
 import { useAuth } from "@clerk/nuxt/composables";
+
 const { isSignedIn } = useAuth();
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
