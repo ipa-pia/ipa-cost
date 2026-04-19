@@ -19,6 +19,7 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
+    "@clerk/nuxt": "^2.2.4",
     "@imengyu/vue3-context-menu": "^1.5.4",
     "@ipa-schema/api": "^0.0.13",
     "@nuxt/icon": "2.1.0",
@@ -33,13 +34,12 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@nuxt/test-utils": "3.20.1",
-    "eslint": "^9.39.4",
-    "@nuxt/eslint": "1.10.0",
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
     "@element-plus/nuxt": "^1.1.5",
     "@iconify-json/line-md": "^1.2.16",
+    "@nuxt/eslint": "1.10.0",
+    "@nuxt/test-utils": "3.20.1",
     "@nuxtjs/i18n": "^10.2.4",
     "@nuxtjs/stylelint-module": "^5.2.1",
     "@pinia/nuxt": "^0.11.3",
@@ -48,6 +48,7 @@
     "@types/node": "^25.6.0",
     "@unocss/nuxt": "^66.6.7",
     "@vueuse/nuxt": "^14.2.1",
+    "eslint": "^9.39.4",
     "husky": "^9.1.7",
     "pinia": "^3.0.4",
     "prisma": "^7.7.0",

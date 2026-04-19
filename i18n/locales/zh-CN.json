@@ -1,3 +1,6 @@
 {
-  "hello": "你好"
+  "hello": "你好",
+  "signUp": "注册",
+  "signIn": "登录",
+  "appName": "Nuxt模板"
 }

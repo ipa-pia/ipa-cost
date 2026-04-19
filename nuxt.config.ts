@@ -7,12 +7,20 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   ssr: false,
+  clerk: {
+    // signInUrl: "/sign-in",
+    // signUpUrl: "/sign-up",
+    afterSignOutUrl: "/",
+    signInForceRedirectUrl: "/dashboard",
+    signInFallbackRedirectUrl: "/dashboard",
+  },
   app: {},
   runtimeConfig: {},
   appConfig: {},
   build: {
     transpile: [],
   },
+  css: ["@/assets/index.css"],
   nitro: {
     externals: {},
     ignore: [],
@@ -35,7 +43,7 @@ export default defineNuxtConfig({
   },
   router: {
     options: {
-      hashMode: true,
+      hashMode: false,
     },
   },
   vite: {
@@ -56,6 +64,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    "@clerk/nuxt",
     "@nuxt/eslint",
     "@nuxt/icon",
     "@nuxt/image",

@@ -1,6 +1,6 @@
 <template>
-  <div class="relative">
-    <div class="absolute top-20px left-0 right-0 mx-auto w-400px">
+  <div class="relative w-full h-full">
+    <div class="mx-auto w-400px flex flex-col items-center">
       <div class="feature">
         <el-tag type="primary" class="feature-name">unplugin-icons</el-tag>
         <ClientOnly>
@@ -13,15 +13,15 @@
       </div>
       <div class="feature">
         <el-tag type="primary" class="feature-name" @contextmenu="onContextMenu"
-          >contextmenu</el-tag
+          >right click on me</el-tag
         >
       </div>
       <div class="feature">
-        <el-switch v-model="isDark" active-text="dark" inactive-text="light" />
+        <el-switch v-model="isDark" active-text="dark" inactive-text="light" inline-prompt />
       </div>
     </div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome :class="[isDark ? 'bg-black!' : 'bg-white!']" />
+    <NuxtWelcome :class="[isDark ? 'bg-black!' : 'bg-white!','max-h-full!','min-h-unset!']" />
   </div>
 </template>
 
