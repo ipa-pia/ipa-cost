@@ -9,23 +9,20 @@ export default clerkMiddleware((event) => {
   if (isSafeRoute(event.path)) {
     return;
   }
-  const { isAuthenticated, userId } = event.context.auth();
-  console.log("isAuthenticated", isAuthenticated, userId, event.path);
+  console.log("clerk middleware", event.context.auth());
+  const { isAuthenticated } = event.context.auth();
   if (isAuthenticated) {
     return;
   }
 
-  if (event.path.startsWith("/api")) {
-    event.node.res.end(
-      JSON.stringify({
+  if (event.path.startsWith("/api/")) {
+    throw createError({
+      statusCode: 401,
+      message: "unauthorized",
+      data: {
         success: false,
-        error: { code: 401, message: "unauthorized" },
-      }),
-    );
-    return;
+      },
+    });
   }
-  throw createError({
-    statusCode: 401,
-    message: "unauthorized",
-  });
+  return sendRedirect(event, "/");
 });
